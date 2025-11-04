@@ -34,29 +34,16 @@ python -m http.server 8000
 npx serve .
 # then open the provided local URL in your browser
 ```
-
 ## Quick usage
+🔗 **Live Demo:** [Click here to try it out!](https://avltree-saroj.netlify.app/)
+
 1. Open the app (index.html or via local server).
 2. Insert values using the Insert field + button — the tree will update.
 3. Use Delete to remove a node.
 4. Use Search to highlight a node (animated).
 5. Toggle the balance factor checkbox (if present) to show/hide node balance values.
 
-## Troubleshooting
-- If the tree does not appear after inserting:
-  - Open browser DevTools (F12) and check the Console for errors.
-  - Ensure `#canvas` element exists in `index.html` and class names (`.insert`, `.delete`, `.search`) match the ones in `script.js`.
-  - Make sure JavaScript is loaded and there are no syntax errors — the console will report these.
 
-- If balance factors are always visible or never visible:
-  - The checkbox with `id="balanceToggle"` controls that. If you commented the checkbox out in `index.html`, the JS uses a safe lookup but will default to hidden unless the checkbox exists and is checked.
-
-- If options in a `<select>` look clipped/only one visible:
-  - This is usually caused by CSS rules affecting `select`/`option` elements. Try disabling custom select CSS or add a reset:
-
-```css
-select, option { height: auto; overflow: visible; display: block; }
-```
 
 ## Developer notes
 - Layout is implemented using simple absolutely-positioned node elements and line divs. Node positions are computed in `script.js`.
@@ -68,3 +55,4 @@ PRs and issues welcome. Small, focused changes are easiest to review.
 
 ## License
 MIT
+
