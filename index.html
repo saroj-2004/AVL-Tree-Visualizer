@@ -1,0 +1,99 @@
+<!-- Saroj Rawal(080BCT076) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AVL Tree Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <h1>AVL Tree Visualizer</h1>
+    <button class="info-button" onclick="toggleModal()">❔</button>
+
+  </div>
+
+  <div class="main-container">
+    <div class="left-panel">
+      <div class="section">
+         <h3>Tree Operations</h3>
+         <div class="input-row">
+           <input type="text" id="insertInput" placeholder="Enter value" />
+           <button class="insert">Insert</button>
+         </div>
+         <div class="input-row">
+           <input type="text" id="deleteInput" placeholder="Enter value" />
+           <button class="delete">Delete</button>
+         </div>
+         <div class="input-row">
+           <input type="text" id="searchInput" placeholder="Enter value" />
+           <button class="search">Search</button>
+         </div>
+      </div>
+
+      <div class="section">
+        <h3>Traversal</h3>
+        <select id="traversalType">
+          <option value="inorder">Inorder</option>
+          <option value="preorder">Preorder</option>
+          <option value="postorder">Postorder</option>
+        </select>
+        <button class="traverse">Traverse</button>
+      </div>
+
+      <div class="section">
+        <h3>Controls</h3>
+        <button class="reset">Reset Tree</button>
+        <button class="undo">Undo</button>
+        <div class="checkbox-group">
+          <input type="checkbox" id="balanceToggle" checked />
+          <label for="balanceToggle">Show Balance Factors</label>
+        </div>
+        <label for="speed">Animation Speed</label>
+        <input type="range" id="speed" min="1" max="10" value="5" />
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div id="canvasArea">
+        <div id="canvas"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="traversal-result">
+    <p>Traversal Result</p>
+    <div id="traversalOutput">[ ]</div>
+  </div>
+
+  <!-- AVL Info Modal -->
+<div id="avlModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="toggleModal()">&times;</span>
+    <h2>About AVL Trees</h2>
+    <p>An AVL tree is a self-balancing binary search tree where the heights of the two child subtrees of any node differ by at most one.</p>
+    <!-- make space -->
+     <div style="margin-top: 16px;"></div>
+    <h3>Rotations</h3>
+    <ul class="avl-list-space">
+      <li><strong>LL Rotation</strong>: Right rotation when left subtree is heavy<br></li>
+      <li><strong>RR Rotation</strong>: Left rotation when right subtree is heavy</li>
+      <li><strong>LR Rotation</strong>: Left-Right rotation for left-right case</li>
+      <li><strong>RL Rotation</strong>: Right-Left rotation for right-left case</li>
+    </ul>
+    <div style="margin-top: 16px;"></div>
+    <h3>Balance Factor</h3>
+    <p>Balance Factor = Height(Left Subtree) - Height(Right Subtree)</p>
+    <p><strong>Valid range</strong>: -1, 0, 1</p>
+  </div>
+</div>
+
+<div id="nodeTooltip" class="node-tooltip" style="display:none; position:absolute; z-index:500;"></div>
+
+<footer>Made using HTML, CSS, JS by Saroj Rawal</footer>
+  <script src="script.js"></script>
+</body>
+</html>
