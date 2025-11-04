@@ -1,4 +1,4 @@
-# AVL Tree Visualizer
+# AVL Tree Visualizer by Saroj Rawal(080BCT076)
 
 A small interactive AVL Tree visualizer built with plain HTML, CSS and JavaScript.
 
@@ -55,4 +55,5 @@ PRs and issues welcome. Small, focused changes are easiest to review.
 
 ## License
 MIT
+
 
